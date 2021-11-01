@@ -1,5 +1,10 @@
 import { ReactElement } from 'react';
+import GameList from '../GameList';
 
 export const Home = (): ReactElement => {
-  return <div>Home</div>;
+  return (
+    <main>
+      <GameList />
+    </main>
+  );
 };
