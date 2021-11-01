@@ -5,7 +5,7 @@ import { Filter } from './types';
 
 export const GameList = (): ReactElement => {
   const [filter, setFilter] = useState<Filter>({ platform: 'browser', sortBy: 'relevance' });
-  const { games, error } = useFetch(filter);
+  const { games, error, loading } = useFetch(filter);
 
   const onFilterChange = useCallback((event: ChangeEvent<HTMLFormElement>) => {
     setFilter((current) => ({
@@ -15,5 +15,7 @@ export const GameList = (): ReactElement => {
     event.preventDefault();
   }, []);
 
-  return <GameListRender err={error} games={games} onFilterChange={onFilterChange} />;
+  return (
+    <GameListRender err={error} games={games} onFilterChange={onFilterChange} loading={loading} />
+  );
 };
