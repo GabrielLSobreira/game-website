@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
+import { Link } from 'react-router-dom';
 
 export const GameContainer = styled.div`
-  padding: 3rem 1rem;
+  padding: 0.3rem 1rem;
   display: flex;
   flex-direction: column;
   color: #cccccc;
@@ -57,6 +58,7 @@ export const MoreInfo = styled.div`
 `;
 
 export const GameSite = styled.div`
+  margin-bottom: 0.5rem;
   span {
     font-size: 1.3rem;
   }
@@ -72,6 +74,7 @@ export const Sreenshot = styled.div`
   display: flex;
   flex-wrap: wrap;
   img {
+    margin-top: 1.3rem;
     margin-bottom: 0.9rem;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -82,4 +85,16 @@ export const Sreenshot = styled.div`
       max-width: 280px;
     }
   }
+`;
+
+export const StyledLink = styled(Link)`
+  display: inline-block;
+  padding: 5px 10px;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 0 0.2rem;
+  margin-top: 0.5rem;
 `;

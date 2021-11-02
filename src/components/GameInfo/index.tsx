@@ -3,7 +3,16 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { API_HOST, API_KEY } from '../../hooks/useFetch/constants';
 import { Loading } from '../Loading';
-import { GameContainer, GameImg, GameInfoS, GameSite, MoreInfo, Sreenshot } from './styles';
+import {
+  GameContainer,
+  GameImg,
+  GameInfoS,
+  GameSite,
+  MoreInfo,
+  Sreenshot,
+  StyledLink,
+} from './styles';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
 type GameInf = {
   title: string;
@@ -56,6 +65,9 @@ export const GameInfo = (): ReactElement => {
         <Loading />
       ) : (
         <>
+          <StyledLink to="/">
+            <IoMdArrowRoundBack />
+          </StyledLink>
           <GameContainer>
             <GameImg>
               <img src={game.thumbnail} alt="" />
