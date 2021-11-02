@@ -22,11 +22,11 @@ export const GameListRender = ({ err, games, onFilterChange, loading }: Props): 
 
   return (
     <>
+      <GameFilter onChange={onFilterChange} />
       {loading ? (
         <Loading />
       ) : (
         <>
-          <GameFilter onChange={onFilterChange} />
           <List>
             {games.map((game) => (
               <ListItem key={game.id}>

@@ -36,8 +36,6 @@ export const useFetch = (params: Filter): Response => {
       .finally(() => setLoading(false));
   }, [platform, genre, sortBy]);
 
-  console.log(loading);
-
   return {
     loading,
     games,
