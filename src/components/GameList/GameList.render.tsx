@@ -3,7 +3,7 @@ import { Game } from '../../types';
 import { GameCard } from '../GameCard';
 import { GameFilter } from '../GameFilter';
 import { Loading } from '../Loading';
-import { List, ListItem } from './styles';
+import { Error, List, ListItem } from './styles';
 
 interface Props {
   err?: string;
@@ -14,10 +14,20 @@ interface Props {
 
 export const GameListRender = ({ err, games, onFilterChange, loading }: Props): ReactElement => {
   if (err) {
-    return <p>Unable to fetch games</p>;
+    return (
+      <div>
+        <GameFilter onChange={onFilterChange} />
+        <Error>Unable to fetch games 😞</Error>
+      </div>
+    );
   }
   if (!loading && !games?.length) {
-    return <p>No games available</p>;
+    return (
+      <div>
+        <GameFilter onChange={onFilterChange} />
+        <Error>No games available 😞</Error>
+      </div>
+    );
   }
 
   return (

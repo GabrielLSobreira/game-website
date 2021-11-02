@@ -47,3 +47,10 @@ export const ListItem = styled.li`
     }
   }
 `;
+
+export const Error = styled.p`
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 3rem;
+`;
